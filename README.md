@@ -1,0 +1,2 @@
+# vizkard
+Vizitka sayti StartUp
