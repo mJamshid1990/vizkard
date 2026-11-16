@@ -1,0 +1,21 @@
+# Virtual environment
+venv/
+
+# Python
+__pycache__/
+*.pyc
+
+# Maxfiy sozlamalar (GitHub'ga yuborilmaydi)
+.env
+
+# Django
+db.sqlite3
+staticfiles/
+media/
+
+# Muharrirlar va tizim fayllari
+.vscode/
+.idea/
+.DS_Store
+Thumbs.db
+*.log
