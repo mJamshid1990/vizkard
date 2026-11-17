@@ -1,11 +1,71 @@
 {% extends "base.html" %}
 
-{% block title %}Vizkard.uz{% endblock %}
+{% block title %}Vizkard.uz - Raqamli vizitkalar katalogi{% endblock %}
 
 {% block content %}
-<div class="container py-5">
-    <h1 class="display-5 fw-bold text-primary">Vizkard.uz</h1>
-    <p class="lead">Bootstrap ulandi va shablon ishlayapti!</p>
-    <a href="#" class="btn btn-primary">Tugma</a>
-</div>
+<section class="hero py-5">
+    <div class="container py-4">
+        <div class="row justify-content-center text-center">
+            <div class="col-lg-8">
+                <h1 class="display-5 fw-bold">O‘zbekistondagi mutaxassislar va kompaniyalar raqamli vizitkasi</h1>
+                <p class="lead text-muted mt-3">Kerakli mutaxassisni hudud, soha yoki ism bo‘yicha toping. O‘zingizning vizitkangizni bir necha daqiqada yarating.</p>
+            </div>
+        </div>
+
+        <div class="row justify-content-center mt-4">
+            <div class="col-lg-10">
+                <form class="card shadow-sm border-0 p-3" method="get" action="#">
+                    <div class="row g-2">
+                        <div class="col-md-4">
+                            <select class="form-select" name="region" aria-label="Viloyat">
+                                <option value="">Barcha viloyatlar</option>
+                                <option>Toshkent shahri</option>
+                                <option>Samarqand viloyati</option>
+                                <option>Buxoro viloyati</option>
+                            </select>
+                        </div>
+                        <div class="col-md-4">
+                            <select class="form-select" name="district" aria-label="Tuman yoki shahar" disabled>
+                                <option value="">Avval viloyatni tanlang</option>
+                            </select>
+                        </div>
+                        <div class="col-md-4">
+                            <select class="form-select" name="category" aria-label="Faoliyat sohasi">
+                                <option value="">Barcha sohalar</option>
+                                <option>Shifokor</option>
+                                <option>Advokat</option>
+                                <option>IT mutaxassisi</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="row g-2 mt-0">
+                        <div class="col-md-9">
+                            <input type="text" class="form-control" name="q" placeholder="Ism yoki kompaniya nomi" aria-label="Ism yoki kompaniya nomi">
+                        </div>
+                        <div class="col-md-3 d-grid">
+                            <button type="submit" class="btn btn-primary">Qidirish</button>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+
+        <div class="text-center mt-4">
+            <a href="#" class="btn btn-outline-primary btn-lg">Vizitka yaratish</a>
+        </div>
+    </div>
+</section>
+
+<section class="py-5">
+    <div class="container">
+        <h2 class="h3 fw-bold mb-4">Tavsiya etilgan vizitkalar</h2>
+        <div class="row g-4">
+            {% for card in cards %}
+            <div class="col-md-6 col-lg-4">
+                {% include "includes/card.html" %}
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+</section>
 {% endblock %}
