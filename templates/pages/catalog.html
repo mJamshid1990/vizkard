@@ -1,0 +1,96 @@
+{% extends "base.html" %}
+
+{% block title %}Katalog - Vizkard.uz{% endblock %}
+
+{% block content %}
+<section class="py-4 bg-light border-bottom">
+    <div class="container">
+        <h1 class="h3 fw-bold mb-1">Katalog</h1>
+        <p class="text-muted mb-0">Topilgan vizitkalar: {{ total }}</p>
+    </div>
+</section>
+
+<section class="py-4">
+    <div class="container">
+        <div class="row g-4">
+
+            <aside class="col-lg-3">
+                <form method="get" action="{% url 'pages:catalog' %}" class="card card-body shadow-sm">
+                    <h2 class="h6 fw-bold mb-3">Filtrlar</h2>
+
+                    <div class="mb-3">
+                        <label for="f-q" class="form-label small">Ism yoki kompaniya</label>
+                        <input type="text" class="form-control" id="f-q" name="q" placeholder="Qidirish">
+                    </div>
+
+                    <div class="mb-3">
+                        <label for="f-region" class="form-label small">Viloyat</label>
+                        <select class="form-select" id="f-region" name="region">
+                            <option value="">Barcha viloyatlar</option>
+                            <option>Toshkent shahri</option>
+                            <option>Samarqand viloyati</option>
+                            <option>Buxoro viloyati</option>
+                        </select>
+                    </div>
+
+                    <div class="mb-3">
+                        <label for="f-district" class="form-label small">Tuman yoki shahar</label>
+                        <select class="form-select" id="f-district" name="district" disabled>
+                            <option value="">Avval viloyatni tanlang</option>
+                        </select>
+                    </div>
+
+                    <div class="mb-3">
+                        <label for="f-category" class="form-label small">Faoliyat sohasi</label>
+                        <select class="form-select" id="f-category" name="category">
+                            <option value="">Barcha sohalar</option>
+                            <option>Shifokor</option>
+                            <option>Advokat</option>
+                            <option>IT mutaxassisi</option>
+                        </select>
+                    </div>
+
+                    <button type="submit" class="btn btn-primary w-100">Qidirish</button>
+                </form>
+            </aside>
+
+            <div class="col-lg-9">
+                <div class="row g-4">
+                    {% for card in page_obj %}
+                    <div class="col-md-6">
+                        {% include "includes/card.html" with card=card %}
+                    </div>
+                    {% endfor %}
+                </div>
+
+                {% if page_obj.has_other_pages %}
+                <nav class="mt-4" aria-label="Sahifalash">
+                    <ul class="pagination justify-content-center">
+                        {% if page_obj.has_previous %}
+                        <li class="page-item"><a class="page-link" href="?page={{ page_obj.previous_page_number }}">Oldingi</a></li>
+                        {% else %}
+                        <li class="page-item disabled"><span class="page-link">Oldingi</span></li>
+                        {% endif %}
+
+                        {% for num in page_obj.paginator.page_range %}
+                        {% if num == page_obj.number %}
+                        <li class="page-item active"><span class="page-link">{{ num }}</span></li>
+                        {% else %}
+                        <li class="page-item"><a class="page-link" href="?page={{ num }}">{{ num }}</a></li>
+                        {% endif %}
+                        {% endfor %}
+
+                        {% if page_obj.has_next %}
+                        <li class="page-item"><a class="page-link" href="?page={{ page_obj.next_page_number }}">Keyingi</a></li>
+                        {% else %}
+                        <li class="page-item disabled"><span class="page-link">Keyingi</span></li>
+                        {% endif %}
+                    </ul>
+                </nav>
+                {% endif %}
+            </div>
+
+        </div>
+    </div>
+</section>
+{% endblock %}
