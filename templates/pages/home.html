@@ -1,11 +1,11 @@
-<!doctype html>
-<html lang="uz">
-  <head>
-    <meta charset="UTF-8" />
-    <title>Vizkard</title>
-  </head>
-  <body>
-    <h1>Vizkard.uz</h1>
-    <p>Birinchi sahifa ishlayapti!</p>
-  </body>
-</html>
+{% extends "base.html" %}
+
+{% block title %}Vizkard.uz{% endblock %}
+
+{% block content %}
+<div class="container py-5">
+    <h1 class="display-5 fw-bold text-primary">Vizkard.uz</h1>
+    <p class="lead">Bootstrap ulandi va shablon ishlayapti!</p>
+    <a href="#" class="btn btn-primary">Tugma</a>
+</div>
+{% endblock %}
