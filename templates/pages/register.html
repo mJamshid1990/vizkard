@@ -1,0 +1,62 @@
+{% extends "base.html" %}
+
+{% block title %}Ro‘yxatdan o‘tish - Vizkard.uz{% endblock %}
+
+{% block content %}
+<div class="container py-5">
+    <div class="row justify-content-center">
+        <div class="col-md-8 col-lg-5">
+            <div class="card border-0 shadow-sm">
+                <div class="card-body p-4">
+                    <h1 class="h3 mb-1">Ro‘yxatdan o‘tish</h1>
+                    <p class="text-muted small mb-4">Hisob yarating va o‘z raqamli vizitkangizni joylashtiring.</p>
+
+                    <form>
+                        <div class="mb-3">
+                            <label for="first_name" class="form-label">Ism</label>
+                            <input type="text" class="form-control" id="first_name" placeholder="Ismingiz">
+                        </div>
+
+                        <div class="mb-3">
+                            <label for="phone" class="form-label">Telefon raqami</label>
+                            <input type="tel" class="form-control" id="phone" placeholder="+998 90 123 45 67">
+                            <div class="form-text">Bu raqam kirish uchun ishlatiladi va boshqalarga ko‘rinmaydi.</div>
+                        </div>
+
+                        <div class="mb-3">
+                            <label for="email" class="form-label">Email</label>
+                            <input type="email" class="form-control" id="email" placeholder="email@example.com">
+                            <div class="form-text">Tasdiqlash xati shu manzilga yuboriladi.</div>
+                        </div>
+
+                        <div class="mb-3">
+                            <label for="password" class="form-label">Parol</label>
+                            <input type="password" class="form-control" id="password" placeholder="Parol o‘ylab toping">
+                        </div>
+
+                        <div class="mb-3">
+                            <label for="password2" class="form-label">Parolni takrorlang</label>
+                            <input type="password" class="form-control" id="password2" placeholder="Parolni qayta kiriting">
+                        </div>
+
+                        <div class="form-check mb-3">
+                            <input class="form-check-input" type="checkbox" id="agree">
+                            <label class="form-check-label small" for="agree">
+                                <a href="#" class="text-decoration-none">Foydalanish shartlari</a> va
+                                <a href="#" class="text-decoration-none">maxfiylik siyosati</a>ga roziman
+                            </label>
+                        </div>
+
+                        <button type="button" class="btn btn-primary w-100">Ro‘yxatdan o‘tish</button>
+                    </form>
+
+                    <hr>
+                    <p class="text-center small mb-0">
+                        Hisobingiz bormi? <a href="{% url 'pages:login' %}" class="text-decoration-none">Kirish</a>
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

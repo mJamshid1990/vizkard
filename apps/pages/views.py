@@ -140,3 +140,6 @@ def card_detail(request, slug):
 
 def login_page(request):
     return render(request, "pages/login.html")
+
+def register_page(request):
+    return render(request, "pages/register.html")
