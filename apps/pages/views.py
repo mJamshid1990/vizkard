@@ -136,3 +136,7 @@ def card_detail(request, slug):
     if card is None:
         raise Http404("Vizitka topilmadi")
     return render(request, "pages/card_detail.html", {"card": card})
+
+
+def login_page(request):
+    return render(request, "pages/login.html")
