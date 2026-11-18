@@ -1,0 +1,75 @@
+{% extends "base.html" %}
+
+{% block title %}{{ card.name }} - Vizkard.uz{% endblock %}
+
+{% block content %}
+<div class="container py-5">
+        <div class="card border-0 shadow-sm vizkard-frame theme-{{ card.theme }}">
+        <div class="card-body p-4 text-center text-md-start">
+            <div class="row align-items-center">
+                <div class="col-md-auto mb-3 mb-md-0">
+                    <div class="avatar mx-auto">{{ card.name|slice:":1" }}</div>
+                </div>
+                <div class="col-md">
+                    <h1 class="h3 mb-1">{{ card.name }}</h1>
+                    <p class="frame-profession mb-1">{{ card.profession }}</p>
+                    <p class="frame-meta small mb-2">
+                        <i class="bi bi-geo-alt"></i> {{ card.location }}
+                    </p>
+                    <p class="frame-meta small mb-0">
+                        <i class="bi bi-eye"></i> {{ card.views }} marta ko‘rilgan
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="card border-0 shadow-sm mt-4">
+        <div class="card-body p-4">
+            <h2 class="h5 mb-3">Haqida</h2>
+            <p class="mb-0">{{ card.about }}</p>
+        </div>
+    </div>
+
+    <div class="card border-0 shadow-sm mt-4">
+        <div class="card-body p-4">
+            <h2 class="h5 mb-3">Xizmatlar</h2>
+            <ul class="list-unstyled mb-0">
+                {% for service in card.services %}
+                <li class="mb-2">
+                    <i class="bi bi-check-circle text-primary me-2"></i>{{ service }}
+                </li>
+                {% endfor %}
+            </ul>
+        </div>
+    </div>
+ <div class="card border-0 shadow-sm mt-4">
+        <div class="card-body p-4">
+            <h2 class="h5 mb-3">Aloqa</h2>
+            <ul class="list-unstyled mb-0">
+                <li class="mb-2">
+                    <i class="bi bi-telephone text-primary me-2"></i>
+                    <a href="tel:{{ card.phone }}" class="text-decoration-none">{{ card.phone }}</a>
+                </li>
+                <li class="mb-2">
+                    <i class="bi bi-envelope text-primary me-2"></i>
+                    <a href="mailto:{{ card.email }}" class="text-decoration-none">{{ card.email }}</a>
+                </li>
+                <li class="mb-0">
+                    <i class="bi bi-telegram text-primary me-2"></i>
+                    <a href="https://t.me/{{ card.telegram }}" target="_blank" rel="noopener" class="text-decoration-none">@{{ card.telegram }}</a>
+                </li>
+            </ul>
+        </div>
+    </div>
+    <div class="card border-0 shadow-sm mt-4">
+        <div class="card-body p-4">
+            <h2 class="h5 mb-3">Baholash</h2>
+            <p class="text-muted small mb-0">
+                <i class="bi bi-star me-1"></i>
+                Baholash tez orada qo‘shiladi. Xizmatdan foydalanganlar yulduzcha va fikr qoldira oladi.
+            </p>
+        </div>
+    </div>
+</div>
+{% endblock %}

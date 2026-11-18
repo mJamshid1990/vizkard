@@ -17,3 +17,46 @@ body {
     font-size: 1.75rem;
     font-weight: 600;
 }
+
+/* Vizitka ramkasi va mavzular */
+.vizkard-frame {
+    --frame-bg: #e7f1ff;
+    --frame-text: #212529;
+    --frame-accent: #0d6efd;
+    --frame-muted: #6c757d;
+    --frame-avatar-text: #fff;
+    background: var(--frame-bg);
+    color: var(--frame-text);
+}
+
+.vizkard-frame .frame-profession {
+    color: var(--frame-accent);
+}
+
+.vizkard-frame .frame-meta {
+    color: var(--frame-muted);
+}
+
+.vizkard-frame .avatar {
+    background-color: var(--frame-accent);
+    color: var(--frame-avatar-text);
+}
+
+.theme-blue {
+    --frame-bg: #e7f1ff;
+    --frame-accent: #0d6efd;
+}
+
+.theme-green {
+    --frame-bg: #e8f5ee;
+    --frame-accent: #198754;
+    --frame-muted: #5c6b63;
+}
+
+.theme-dark {
+    --frame-bg: #212529;
+    --frame-text: #f8f9fa;
+    --frame-accent: #6ea8fe;
+    --frame-muted: #adb5bd;
+    --frame-avatar-text: #212529;
+}

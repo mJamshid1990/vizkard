@@ -7,6 +7,6 @@
         <p class="card-text small">{{ card.description }}</p>
     </div>
     <div class="card-footer bg-white border-0 pb-4 text-center">
-        <a href="#" class="btn btn-outline-primary btn-sm">Vizitkani ko‘rish</a>
+        <a href="{% url 'pages:card_detail' card.slug %}" class="btn btn-outline-primary btn-sm">Vizitkani ko‘rish</a>
     </div>
 </div>
