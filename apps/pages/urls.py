@@ -10,4 +10,6 @@ urlpatterns = [
     path("vizkard/<slug:slug>/", views.card_detail, name="card_detail"),
     path("kirish/", views.login_page, name="login"),
     path("royxatdan-otish/", views.register_page, name="register"),
+    path("biz-haqimizda/", views.about_page, name="about"),
+    path("boglanish/", views.contact_page, name="contact"),
 ]

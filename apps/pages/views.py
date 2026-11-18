@@ -143,3 +143,9 @@ def login_page(request):
 
 def register_page(request):
     return render(request, "pages/register.html")
+
+def about_page(request):
+    return render(request, "pages/about.html")
+
+def contact_page(request):
+    return render(request, "pages/contact.html")

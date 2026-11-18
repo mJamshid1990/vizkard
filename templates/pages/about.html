@@ -1,0 +1,45 @@
+{% extends "base.html" %}
+
+{% block title %}Biz haqimizda - Vizkard.uz{% endblock %}
+
+{% block content %}
+<div class="container py-5">
+    <div class="text-center mb-5">
+        <h1 class="h2 mb-3">Biz haqimizda</h1>
+        <p class="text-muted mx-auto" style="max-width: 640px;">
+            Vizkard.uz - O‘zbekistondagi mutaxassislar, kompaniyalar va tadbirkorlar uchun raqamli vizitkalar katalogi.
+            Bitta havola orqali o‘zingiz va xizmatlaringiz haqida to‘liq ma’lumot ulashing.
+        </p>
+    </div>
+
+    <div class="row g-4">
+        <div class="col-md-4">
+            <div class="card h-100 border-0 shadow-sm">
+                <div class="card-body p-4 text-center">
+                    <i class="bi bi-lightning-charge text-primary fs-1"></i>
+                    <h2 class="h5 mt-3">Tez</h2>
+                    <p class="text-muted small mb-0">Vizitkani bir necha daqiqada yarating va darhol ulashing.</p>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-4">
+            <div class="card h-100 border-0 shadow-sm">
+                <div class="card-body p-4 text-center">
+                    <i class="bi bi-phone text-primary fs-1"></i>
+                    <h2 class="h5 mt-3">Qulay</h2>
+                    <p class="text-muted small mb-0">Telefon, Telegram va xizmatlaringiz bitta sahifada, istalgan qurilmada ochiladi.</p>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-4">
+            <div class="card h-100 border-0 shadow-sm">
+                <div class="card-body p-4 text-center">
+                    <i class="bi bi-shield-check text-primary fs-1"></i>
+                    <h2 class="h5 mt-3">Ishonchli</h2>
+                    <p class="text-muted small mb-0">Har bir vizitka e’lon qilinishdan oldin tekshiriladi.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}
